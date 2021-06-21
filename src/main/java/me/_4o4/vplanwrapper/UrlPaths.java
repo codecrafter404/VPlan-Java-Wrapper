@@ -1,3 +1,5 @@
+package me._4o4.vplanwrapper;
+
 public enum UrlPaths {
     GET_DAY ("/vplan/api/vplan5.php");
 

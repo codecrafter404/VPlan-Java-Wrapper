@@ -1,4 +1,4 @@
-package models;
+package me._4o4.vplanwrapper.models;
 
 import com.google.gson.annotations.SerializedName;
 

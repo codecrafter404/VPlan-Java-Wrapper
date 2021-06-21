@@ -1,9 +1,11 @@
+package me._4o4.vplanwrapper;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import models.Date;
-import models.Day;
-import models.StartTimes;
-import models.Week;
+import me._4o4.vplanwrapper.models.Date;
+import me._4o4.vplanwrapper.models.Day;
+import me._4o4.vplanwrapper.models.StartTimes;
+import me._4o4.vplanwrapper.models.Week;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.net.ssl.HttpsURLConnection;
