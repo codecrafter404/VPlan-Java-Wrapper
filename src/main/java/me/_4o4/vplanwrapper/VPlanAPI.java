@@ -28,6 +28,7 @@ public class VPlanAPI {
         this.password = password;
     }
 
+    //Fetch JSON
     private String downloadJson(String _class, List<String> days) throws IOException {
         List<Date> dates = new ArrayList<>();
         days.forEach(day -> dates.add(new Date(day)));
@@ -38,6 +39,7 @@ public class VPlanAPI {
         return downloadData(new URL(baseurl + args), args.getBytes());
     }
 
+    //Download Actual Data
     private String downloadData(URL paramURL, byte[] paramArrayOfbyte) throws IOException {
         HttpsURLConnection httpsURLConnection = (HttpsURLConnection)paramURL.openConnection();
         httpsURLConnection.setRequestMethod("POST");
