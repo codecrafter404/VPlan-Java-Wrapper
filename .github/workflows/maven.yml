@@ -23,3 +23,8 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       run: mvn clean package
+    - run: mkdir build && cp target/*.jar build
+    - uses: actions/upload-artifact@v2
+      with:
+       name: vplanwrapper
+       path: build
