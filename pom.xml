@@ -12,6 +12,13 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    <distributionManagement>
+       <repository>
+           <id>github</id>
+           <name>GitHub codecrafter404 Apache Maven Packages</name>
+           <url>https://maven.pkg.github.com/codecrafter404/VPlan-Java-Wrapper</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <!--Gson-->
