@@ -6,7 +6,7 @@
 
     <groupId>me._4o4</groupId>
     <artifactId>vplanwrapper</artifactId>
-    <version>1.0</version>
+
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
