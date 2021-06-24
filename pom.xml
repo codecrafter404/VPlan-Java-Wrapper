@@ -13,7 +13,7 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <scm>
-        <developerConnection>scm:git:https://github.com/codecrafter404/VPlan-Java-Wrapper.git</developerConnection>
+        <developerConnection>scm:git://github.com/codecrafter404/VPlan-Java-Wrapper.git</developerConnection>
     </scm>
     <distributionManagement>
        <repository>
