@@ -27,7 +27,7 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Increase Version
-      run: mvn -B buildnumber-maven-plugin:1.4:create -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn -B buildnumber-maven-plugin:create -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
         
