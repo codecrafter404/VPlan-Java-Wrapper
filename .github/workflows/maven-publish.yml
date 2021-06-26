@@ -37,7 +37,7 @@ jobs:
       run: mvn -B release:update-versions
       
     - name: Push updated version
-      run: cat pom.xml
+      run: ls -la
     
     - name: Build with Maven
       run: mvn -B package --file pom.xml
