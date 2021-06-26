@@ -4,7 +4,7 @@
 
     <groupId>me._4o4</groupId>
     <artifactId>vplanwrapper</artifactId>
-    <version>1.8</version>
+    <version>1.9-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -14,7 +14,7 @@
         <connection>scm:git:${project.scm.url}</connection>
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
         <url>git@github.com:codecrafter404/VPlan-Java-Wrapper.git</url>
-        <tag>vplanwrapper-1.8</tag>
+        <tag>HEAD</tag>
     </scm>
 
 
