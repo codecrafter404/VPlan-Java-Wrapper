@@ -46,7 +46,8 @@ jobs:
       run: |
         git config --global user.name "bot"
         git config --global user.email "bot@github.com"
-        git commit pom.xml
+        git add pom.xml
+        git commit -m "[BOT] Updated version"
         git push origin master
         
     - name: Build with Maven
