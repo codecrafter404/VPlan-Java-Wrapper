@@ -46,6 +46,7 @@ jobs:
       run: |
         git remote set-url origin git@github.com:${{github.repository}}.git
         echo '${{secrets.SSH_KEY}}' > /tmp/sshkey
+        chmod 600 /tmp/sshkey
         git config core.sshCommand "ssh -i /tmp/sshkey"
         git config --global user.name "bot"
         git config --global user.email "bot@github.com"
