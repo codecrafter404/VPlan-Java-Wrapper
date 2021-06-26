@@ -26,7 +26,7 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
         
     - name: Update Version
-      run: mvn release:update-versions
+      run: mvn -B release:update-versions
     
     - name: Build with Maven
       run: mvn -B package --file pom.xml
