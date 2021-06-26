@@ -49,7 +49,7 @@ jobs:
         email: bot@github.com
         files: pom.xml
         repository: 'https://github.com/${{github.repository}}.git'
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.COMMIT_TOKEN }}
         
     - name: Build with Maven
       run: mvn -B package --file pom.xml
