@@ -44,7 +44,7 @@ jobs:
       with:
         git_token_holder: 'codecrafter404'
         git_token: ${{ secrets.GITHUB_TOKEN }}
-        repository_url: ${{github.repository}}
+        repository_url: github.com/${{github.repository}}.git
         push_dir: ${{ github.workspace }}
         commit_user: 'Commit Bot'
         commit_email: 'bot@github.com'
