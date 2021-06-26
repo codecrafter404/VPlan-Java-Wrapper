@@ -6,7 +6,8 @@ name: Maven Package
 on:
   push:
     paths-ignore: ['pom.xml', '.*']
-
+  workflow_dispatch:
+    
 jobs:
   build:
 
@@ -25,6 +26,11 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
         
+    - name: Delete old package versions
+      uses: actions/delete-package-versions@v1
+      with:
+        package-name: 'me._4o4.vplanwrapper'
+
     - name: Update Version
       run: mvn -B release:update-versions
     
