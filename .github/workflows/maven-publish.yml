@@ -27,9 +27,11 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
         
     - name: Delete old package versions
-      uses: actions/delete-package-versions@v1
+      uses: smartsquaregmbh/delete-old-packages@v0.3.1
       with:
-        package-name: 'me._4o4.vplanwrapper'
+        names: |
+          me._4o4.vplanwrapper
+        keep: 5
 
     - name: Update Version
       run: mvn -B release:update-versions
