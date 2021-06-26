@@ -4,7 +4,9 @@
 name: Maven Build
 
 on:
-  release:
+  push:
+   tags:
+   - '*'
 jobs:
   build:
 
