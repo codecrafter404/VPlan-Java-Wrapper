@@ -41,3 +41,4 @@ jobs:
        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
        git-release-bot-name: "BOT"
        git-release-bot-email: "BOT@bot.com"
+       access-token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
