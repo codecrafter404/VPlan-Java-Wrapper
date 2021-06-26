@@ -43,13 +43,9 @@ jobs:
       run: echo ${{ github.workspace }}
       
     - name: Push updated version
-      uses: actions-x/commit@v2
-      with:
-        name: bot
-        email: bot@github.com
-        files: pom.xml
-        repository: 'https://github.com/${{github.repository}}'
-        token: ${{ secrets.COMMIT_TOKEN }}
+      run: |
+        git commit pom.xml
+        git push origin master
         
     - name: Build with Maven
       run: mvn -B package --file pom.xml
