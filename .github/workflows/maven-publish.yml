@@ -37,7 +37,10 @@ jobs:
       run: mvn -B release:update-versions
       
     - name: Echo Repo URL
-      run: echo ${{github.repository}}
+      run: echo 'github.com/${{github.repository}}.git'
+      
+    - name: Echo working dir
+      run: echo ${{ github.workspace }}
       
     - name: Push updated version
       uses: liziwl/git-push-action@master
