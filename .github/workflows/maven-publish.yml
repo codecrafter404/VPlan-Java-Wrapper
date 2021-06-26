@@ -48,7 +48,7 @@ jobs:
         name: bot
         email: bot@github.com
         files: pom.xml
-        repository: 'https://github.com/${{github.repository}}'
+        repository: 'https://github.com/${{github.repository}}.git'
         token: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Build with Maven
