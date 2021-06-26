@@ -43,15 +43,13 @@ jobs:
       run: echo ${{ github.workspace }}
       
     - name: Push updated version
-      uses: liziwl/git-push-action@master
+      uses: actions-x/commit@v2
       with:
-        git_token_holder: 'codecrafter404'
-        git_token: ${{ secrets.GITHUB_TOKEN }}
-        repository_url: github.com/${{github.repository}}.git
-        push_dir: ${{ github.workspace }}
-        commit_user: 'Commit Bot'
-        commit_email: 'bot@github.com'
-        commit_message: '[BOT] Updated Version'
+        name: bot
+        email: bot@github.com
+        files: pom.xml
+        repository: 'https://github.com/${{github.repository}}'
+        token: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Build with Maven
       run: mvn -B package --file pom.xml
