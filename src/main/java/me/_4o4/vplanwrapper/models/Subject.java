@@ -26,6 +26,9 @@ public class Subject {
     @SerializedName("au")
     private boolean failure = false;
 
+    @SerializedName("ko")
+    private String info = "";
+
 
     public String getName_full() {
         return name_full;
@@ -53,5 +56,9 @@ public class Subject {
 
     public boolean isFailure() {
         return failure;
+    }
+
+    public String getInfo() {
+        return info;
     }
 }
