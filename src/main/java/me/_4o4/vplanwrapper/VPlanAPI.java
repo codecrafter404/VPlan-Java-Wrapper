@@ -39,6 +39,13 @@ public class VPlanAPI {
         return downloadData(new URL(baseurl + args), args.getBytes());
     }
 
+    public boolean checkPassword(String password) throws IOException {
+        final String baseUrl = String.format("https://%s?", host + UrlPaths.CHECK_PASSWORD.getPath());
+        final String args = String.format("v=%s&checkpw=%s", version, DigestUtils.md5Hex(password));
+        JsonObject object = new Gson().fromJson(downloadData(new  URL(baseUrl + args), args.getBytes()),JsonObject.class);
+        return object.get("response").getAsString().equals("OK");
+    }
+
     //Download Actual Data
     private String downloadData(URL paramURL, byte[] paramArrayOfbyte) throws IOException {
         HttpsURLConnection httpsURLConnection = (HttpsURLConnection)paramURL.openConnection();
@@ -72,10 +79,12 @@ public class VPlanAPI {
         List<Day> dates = new ArrayList<>();
 
         days.forEach(day ->{
-            Day d = new Gson().fromJson(
-                    new Gson().fromJson(json, JsonObject.class).get(day).getAsJsonObject().toString(),
-                    Day.class);
-            dates.add(d);
+            if(new Gson().fromJson(json, JsonObject.class).has(day)){
+                Day d = new Gson().fromJson(
+                        new Gson().fromJson(json, JsonObject.class).get(day).getAsJsonObject().toString(),
+                        Day.class);
+                dates.add(d);
+            }
         });
 
         StartTimes sTimes = null;
@@ -84,7 +93,10 @@ public class VPlanAPI {
                     new Gson().fromJson(json, JsonObject.class).get("stzeit").getAsJsonObject().toString(),
                     StartTimes.class);
         }
+        String error = new Gson().fromJson(json, JsonObject.class).has("error") ?
+                new Gson().fromJson(json, JsonObject.class).get("error").getAsString() :
+                "";
 
-        return new Week(dates, sTimes);
+        return new Week(dates, sTimes, error);
     }
 }

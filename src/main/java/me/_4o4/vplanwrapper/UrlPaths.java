@@ -1,7 +1,8 @@
 package me._4o4.vplanwrapper;
 
 public enum UrlPaths {
-    GET_DAY ("/vplan/api/vplan5.php");
+    GET_DAY ("/vplan/api/vplan5.php"),
+    CHECK_PASSWORD ("/vplan/api/vplan5.php");
 
     private String path;
     UrlPaths(String x){
