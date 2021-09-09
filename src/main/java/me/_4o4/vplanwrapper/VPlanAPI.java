@@ -21,19 +21,19 @@ public class VPlanAPI {
 
     private final String host;
     private final String password;
+    private final boolean isMD5Password;
     private final int version = 32;
 
-    public VPlanAPI(String host, String password) {
+    public VPlanAPI(String host, String password, boolean isMD5Password) {
         this.host = host;
         this.password = password;
+        this.isMD5Password = isMD5Password;
     }
 
     //Fetch JSON
-    private String downloadJson(String _class, List<String> days) throws IOException {
-        List<Date> dates = new ArrayList<>();
-        days.forEach(day -> dates.add(new Date(day)));
+    private String downloadJson(String _class, List<Date> days) throws IOException {
         final String baseurl = "https://" + host + UrlPaths.GET_DAY.getPath()+ "?";
-        final String args = String.format("v=%s&klasse=%s&pw=%s&data=%s", version, _class, DigestUtils.md5Hex(password), new Gson().toJson(dates));
+        final String args = String.format("v=%s&klasse=%s&pw=%s&data=%s", version, _class, isMD5Password ? password : DigestUtils.md5Hex(password), new Gson().toJson(days));
 
         // Actual Downloading
         return downloadData(new URL(baseurl + args), args.getBytes());
@@ -45,6 +45,7 @@ public class VPlanAPI {
         JsonObject object = new Gson().fromJson(downloadData(new  URL(baseUrl + args), args.getBytes()),JsonObject.class);
         return object.get("response").getAsString().equals("OK");
     }
+
 
     //Download Actual Data
     private String downloadData(URL paramURL, byte[] paramArrayOfbyte) throws IOException {
@@ -74,14 +75,14 @@ public class VPlanAPI {
         }
     }
 
-    public Week getWeek(List<String> days, String _class) throws IOException{
+    public Week getWeek(List<Date> days, String _class) throws IOException{
         String json = downloadJson(_class, days);
         List<Day> dates = new ArrayList<>();
 
         days.forEach(day ->{
-            if(new Gson().fromJson(json, JsonObject.class).has(day)){
+            if(new Gson().fromJson(json, JsonObject.class).has(day.getDate())){
                 Day d = new Gson().fromJson(
-                        new Gson().fromJson(json, JsonObject.class).get(day).getAsJsonObject().toString(),
+                        new Gson().fromJson(json, JsonObject.class).get(day.getDate()).getAsJsonObject().toString(),
                         Day.class);
                 dates.add(d);
             }

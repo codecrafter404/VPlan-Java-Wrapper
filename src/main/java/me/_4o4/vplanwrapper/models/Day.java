@@ -40,6 +40,10 @@ public class Day {
     @SerializedName("err")
     private String error = "";
 
+    //This can be 'DATA_NOT_CHANGED'
+    @SerializedName("info")
+    private String changed_info  = "";
+
     public List<List<Subject>> getSubjects(){
         List<List<Subject>> subjects = Arrays.asList(first, two, three, fourth, fifth, sixth, seventh, eight);
         List<List<Subject>> subjects_nonNull = new ArrayList<>();
@@ -62,6 +66,10 @@ public class Day {
 
     public String getInfo() {
         return info;
+    }
+
+    public String getChanged_info() {
+        return changed_info;
     }
 
     public String getError() {
