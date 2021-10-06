@@ -4,30 +4,30 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Subject {
+public class JsonSubject {
     @SerializedName("f")
-    private String name_full = "";
+    private final String name_full = "";
 
     @SerializedName("f_ori")
-    private String name_short = "";
+    private final String name_short = "";
 
     @SerializedName("f_a")
-    private boolean change = false;
+    private final boolean change = false;
 
     @SerializedName("l")
-    List<Teacher> teacher;
+    List<JsonTeacher> teacher;
 
     @SerializedName("r_a")
-    private boolean room_change = false;
+    private final boolean room_change = false;
 
     @SerializedName("r")
-    private String room_name = "";
+    private final String room_name = "";
 
     @SerializedName("au")
-    private boolean failure = false;
+    private final boolean failure = false;
 
     @SerializedName("ko")
-    private String info = "";
+    private final String info = "";
 
 
     public String getName_full() {
@@ -42,7 +42,7 @@ public class Subject {
         return change;
     }
 
-    public List<Teacher> getTeacher() {
+    public List<JsonTeacher> getTeacher() {
         return teacher;
     }
 

@@ -1,10 +1,10 @@
 package me._4o4.vplanwrapper.models;
 
-public class Date {
-    private String date;
-    private int timestamp;
+public class RequestDate {
+    private final String date;
+    private final int timestamp;
 
-    public Date(String date, int timestamp) {
+    public RequestDate(String date, int timestamp) {
         this.date = date;
         this.timestamp = timestamp;
     }

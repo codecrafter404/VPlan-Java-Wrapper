@@ -2,12 +2,12 @@ package me._4o4.vplanwrapper.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Teacher {
+public class JsonTeacher {
     @SerializedName("a")
-    private boolean failure = false;
+    private final boolean failure = false;
 
     @SerializedName("n")
-    private String name = "";
+    private final String name = "";
 
     public boolean isFailure() {
         return failure;

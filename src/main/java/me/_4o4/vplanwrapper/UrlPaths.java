@@ -4,7 +4,7 @@ public enum UrlPaths {
     GET_DAY ("/vplan/api/vplan5.php"),
     CHECK_PASSWORD ("/vplan/api/vplan5.php");
 
-    private String path;
+    private final String path;
     UrlPaths(String x){
         this.path = x;
     }

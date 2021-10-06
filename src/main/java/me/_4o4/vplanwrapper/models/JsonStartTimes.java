@@ -2,7 +2,7 @@ package me._4o4.vplanwrapper.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class StartTimes {
+public class JsonStartTimes {
 
     @SerializedName("1")
     private String first;
