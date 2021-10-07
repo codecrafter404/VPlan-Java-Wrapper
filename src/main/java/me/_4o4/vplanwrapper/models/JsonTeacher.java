@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName;
 
 public class JsonTeacher {
     @SerializedName("a")
-    private final boolean failure = false;
+    private boolean failure = false;
 
     @SerializedName("n")
-    private final String name = "";
+    private String name = "";
 
     public boolean isFailure() {
         return failure;

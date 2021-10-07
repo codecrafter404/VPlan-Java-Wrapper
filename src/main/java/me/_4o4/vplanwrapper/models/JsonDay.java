@@ -7,10 +7,10 @@ import java.util.List;
 
 public class JsonDay {
     @SerializedName("timestamp")
-    private final String timestamp = "";
+    private String timestamp = "";
 
     @SerializedName("x")
-    private final String info = "";
+    private String info = "";
 
     @SerializedName("1")
     private List<JsonSubject> first;
@@ -37,11 +37,11 @@ public class JsonDay {
     private List<JsonSubject> eight;
 
     @SerializedName("err")
-    private final String error = "";
+    private String error = "";
 
     //This can be 'DATA_NOT_CHANGED'
     @SerializedName("info")
-    private final String changed_info  = "";
+    private String changed_info  = "";
 
     public List<List<JsonSubject>> getSubjects(){
         return Arrays.asList(first, two, three, fourth, fifth, sixth, seventh, eight);

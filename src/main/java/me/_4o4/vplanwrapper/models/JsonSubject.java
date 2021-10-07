@@ -6,28 +6,28 @@ import java.util.List;
 
 public class JsonSubject {
     @SerializedName("f")
-    private final String name_full = "";
+    private String name_full = "";
 
     @SerializedName("f_ori")
-    private final String name_short = "";
+    private String name_short = "";
 
     @SerializedName("f_a")
-    private final boolean change = false;
+    private boolean change = false;
 
     @SerializedName("l")
     List<JsonTeacher> teacher;
 
     @SerializedName("r_a")
-    private final boolean room_change = false;
+    private boolean room_change = false;
 
     @SerializedName("r")
-    private final String room_name = "";
+    private String room_name = "";
 
     @SerializedName("au")
-    private final boolean failure = false;
+    private boolean failure = false;
 
     @SerializedName("ko")
-    private final String info = "";
+    private String info = "";
 
 
     public String getName_full() {

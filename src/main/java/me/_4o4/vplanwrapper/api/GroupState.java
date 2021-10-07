@@ -1,11 +1,22 @@
 package me._4o4.vplanwrapper.api;
 
+/**
+ * The state of the group, used in Group
+ */
 public class GroupState {
-    //Has group changed
+    /**
+     * has group changed?
+     */
     boolean change;
-    //Has room changed
+
+    /**
+     * has room changed?
+     */
     boolean roomChange;
-    // is failure
+
+    /**
+     * is failure?
+     */
     boolean failure;
 
     public GroupState(boolean change, boolean roomChange, boolean failure) {
