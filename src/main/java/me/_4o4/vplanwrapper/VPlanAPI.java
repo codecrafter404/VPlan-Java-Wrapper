@@ -240,6 +240,7 @@ public class VPlanAPI {
 
                     // A subject like ethics and religions
                     case 2:
+                        subjectIsMultiGroup = true;
                         if (subject.get(0).getName_full().equalsIgnoreCase(subject.get(1).getName_full())) {
                             subjectName = subject.get(0).getName_full();
                             subjectNameShort = subject.get(0).getName_short();
