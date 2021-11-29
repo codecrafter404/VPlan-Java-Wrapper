@@ -126,7 +126,6 @@ public class VPlanAPI {
     private JsonWeek getJsonWeek(List<RequestDate> days, String _class) throws IOException{
         if(days == null || _class == null) throw new IllegalArgumentException();
         String json = downloadJson(_class, days);
-        System.out.println(json);
         List<JsonDay> dates = new ArrayList<>();
 
         days.forEach(day ->{
@@ -202,8 +201,7 @@ public class VPlanAPI {
             }
 
             String dayTimestamp = day.getTimestamp();
-            System.out.println(day.getChanged_info());
-            boolean dayRequestChanged = !day.getChanged_info().equals("DATA_NOT_CHANGED") && !day.getChanged_info().equals("");
+            boolean dayRequestChanged = !day.getChanged_info().equals("DATA_NOT_CHANGED");
             List<Subject> daySubjects = new ArrayList<>();
             String dayInfo = day.getInfo();
 
