@@ -1,3 +1,6 @@
+# Archived
+Our school switched their VPlan system...
+
 # VPlan-Java-Wrapper
 This is a wrapper for the API from gykl.de
 
